@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route,Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Homepage from './component/Homepage';
+import Lecture from "./component/Lecture";
+import Login2 from './component/Login2';
+import PracticeQuiz from './component/PracticePage';
+import Quiz from './component/Quiz';
+import Registration from './component/Registration';
+import Profile from './component/UserHome';
+
+const App = () => (
+      <Switch>
+        <Route exact path="/" component={Homepage}/>
+        <Route exact path="/lecture" component={Lecture}/>
+        <Route exact path="/login2" component={Login2}/>
+        <Route exact path="/practicepage" component={PracticeQuiz}/>
+        <Route exact path="/quiz" component={Quiz}/>
+        <Route exact path="/registration" component={Registration}/>
+        <Route exact path="/profile" component={Profile}/>
+      </Switch>
+  )
+
 
 export default App;
